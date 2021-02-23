@@ -1,6 +1,6 @@
 defmodule ElixpayWeb.WelcomeController do
   use ElixpayWeb, :controller
-  alias Rocketpay.Numbers
+  alias Elixpay.Numbers
 
   def index(conn, %{"filename" => filename}) do
     filename
