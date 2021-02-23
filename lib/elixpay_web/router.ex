@@ -8,7 +8,7 @@ defmodule ElixpayWeb.Router do
   scope "/api", ElixpayWeb do
     pipe_through :api
 
-    get "/", WelcomeController, :index
+    get "/:filename", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
