@@ -10,6 +10,19 @@ defmodule ElixpayWeb.ErrorView do
   # By default, Phoenix returns the status message from
   # the template name. For example, "404.json" becomes
   # "Not Found".
+  def render("400.json", %{result: result}) do
+
+    errors = result
+      |> Enum.map(fn
+        {field, {message, _}} -> "#{field} #{message}"
+      end)
+
+    IO.inspect errors
+    %{
+      errors: errors
+    }
+  end
+
   def template_not_found(template, _assigns) do
     %{errors: %{detail: Phoenix.Controller.status_message_from_template(template)}}
   end
