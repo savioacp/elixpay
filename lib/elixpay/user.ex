@@ -13,6 +13,8 @@ defmodule Elixpay.User do
     field :password, :string, virtual: true
     field :password_hash, :string
 
+    has_one :account, Elixpay.Account
+
     timestamps()
   end
 

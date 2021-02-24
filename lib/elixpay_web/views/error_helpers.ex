@@ -3,6 +3,9 @@ defmodule ElixpayWeb.ErrorHelpers do
   Conveniences for translating and building error messages.
   """
 
+  import Ecto.Changeset, only: [traverse_errors: 2]
+
+
   @doc """
   Translates an error message using gettext.
   """
@@ -29,5 +32,18 @@ defmodule ElixpayWeb.ErrorHelpers do
     else
       Gettext.dgettext(ElixpayWeb.Gettext, "errors", msg, opts)
     end
+  end
+
+  def errors_from_changeset(%Ecto.Changeset{} = changeset) do
+    changeset
+    |> traverse_errors(fn {msg, options} ->
+      Enum.reduce(options, msg, fn {key, value}, acc ->
+        acc |> String.replace("%{#{key}}", to_string(value))
+      end)
+    end)
+    |> Enum.map(fn {key, values} ->
+      values |> Enum.map(&"#{key} #{&1}")
+    end)
+    |> List.flatten()
   end
 end
