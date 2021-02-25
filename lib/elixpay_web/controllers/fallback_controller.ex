@@ -12,6 +12,6 @@ defmodule ElixpayWeb.FallbackController do
     conn
     |> put_status(:internal_server_error)
     |> put_view(ElixpayWeb.ErrorView)
-    |> render("generic", error)
+    |> render("generic.json", error: error)
   end
 end

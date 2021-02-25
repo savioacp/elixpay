@@ -1,4 +1,4 @@
-defmodule Elixpay.Accounts.Deposit do
+defmodule Elixpay.Accounts.Withdraw do
   alias Elixpay.{Account, Repo}
   import Ecto.Query
 
@@ -10,7 +10,7 @@ defmodule Elixpay.Accounts.Deposit do
                where: a.id == ^account_id,
                select: a
              ),
-             inc: [balance: value]
+             inc: [balance: Decimal.negate(value)]
            ) do
       {:ok, account}
     end

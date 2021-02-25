@@ -16,19 +16,17 @@ defmodule ElixpayWeb.ErrorView do
   def render("400.json", %{result: %Ecto.Changeset{} = changeset}) do
     errors = errors_from_changeset(changeset)
 
-    # errors =
-    #   changeset.errors
-    #   |> Enum.map(fn
-    #     {field, {message, _}} ->
-    #       "#{field} #{message}"
-    #   end)
-
-    IO.inspect(errors)
-
     %{
       errors: errors
     }
   end
+
+  def render("generic.json", %{error: message}) do
+    %{
+      error: message
+    }
+  end
+
   def template_not_found(template, _assigns) do
     %{errors: %{detail: Phoenix.Controller.status_message_from_template(template)}}
   end
