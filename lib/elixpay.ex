@@ -3,4 +3,5 @@ defmodule Elixpay do
 
   defdelegate deposit(params), to: Elixpay.Accounts.Deposit, as: :call
   defdelegate withdraw(params), to: Elixpay.Accounts.Withdraw, as: :call
+  defdelegate transaction(params), to: Elixpay.Accounts.Transaction, as: :call
 end
