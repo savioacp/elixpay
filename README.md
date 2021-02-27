@@ -1,5 +1,5 @@
 # Elixpay
-![Test coverage badge](https://img.shields.io/coveralls/github/savioacp/elixpay)
+![Language](https://img.shields.io/github/languages/top/savioacp/elixpay?color=%238d67af&logo=elixir&logoColor=%23d9d8dc&style=flat-square)
 
 ## Overview
 
