@@ -24,7 +24,10 @@ defmodule ElixpayWeb.UsersViewTest do
       message: "User created",
       user: %{
         id: ^user_id,
-        account: %{id: ^account_id, balance: value}
+        account: %{
+          id: ^account_id,
+          balance: value
+        }
       }
     } = response
 
