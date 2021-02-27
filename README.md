@@ -8,7 +8,7 @@ Este projeto foi criado ao acompanhar a Next Level Week #4. O nome do projeto fo
 
 ## Iniciando o projeto
 
-  * Configure um servidor Postgres em `localhost` com crecenciais `postgres:postgres`
+  * Configure um servidor Postgres em `localhost` com credenciais `postgres:postgres`
   * `mix deps.get`
   * `mix ecto.setup`
   * `mix phx.server`
