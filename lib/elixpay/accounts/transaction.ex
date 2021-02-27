@@ -15,8 +15,8 @@ defmodule Elixpay.Accounts.Transaction do
 
     case result do
 
-      {:ok, %TransactionResponse{} = response}
-        -> {:ok, response}
+      {:ok, response}
+        -> {:ok, TransactionResponse.new(response.sender, response.receiver)}
 
       :error
         -> {:error, "Invalid decimal value."}
