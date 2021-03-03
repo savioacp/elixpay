@@ -1,12 +1,12 @@
-# Elixpay
+# :bank: Elixpay
 ![Language](https://img.shields.io/github/languages/top/savioacp/elixpay?color=%238d67af&logo=elixir&logoColor=%23d9d8dc&style=flat-square)
 
-## Overview
+## 📋 Overview
 
 Este projeto foi criado ao acompanhar a Next Level Week #4. O nome do projeto foi trocado para Elixpay para melhor representar o objetivo do projeto. O nome original é Rocketpay.
 
 
-## Iniciando o projeto
+## :gear: Iniciando o projeto
 
   * Configure um servidor Postgres em `localhost` com credenciais `postgres:postgres`
   * `mix deps.get`
@@ -15,7 +15,7 @@ Este projeto foi criado ao acompanhar a Next Level Week #4. O nome do projeto fo
 
 A API estará escutando na porta 4000.
 
-## Competências adquiridas
+## ✔️ Competências adquiridas
 
   * Ecto:
     * Schemas
